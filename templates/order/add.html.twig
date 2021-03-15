@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paiement de ma commande - The Store{% endblock %}
+
+{% block content %}
+ <h2 class="text-center">Ma commande</h2><hr>
+ <strong>Vérifiez vos informations avant de valider votre commande</strong><hr>
+ <div class="row">
+    <div class="col-md-6">
+        <strong>Mon adresse de livraison</strong>
+         <div class="form-check">
+            {{ delivery|raw }}
+        </div>
+        <hr>
+         <strong>Mon transporteur</strong><br/>
+         <div class="form-check">
+            {{ carrier.name }}<br/>
+            {{ carrier.description }}<br/>
+            {{ carrier.price|number_format(2, '.', ',') }}€
+        </div>
+         </div>
+        <div class="col-2 my-auto">
+       
+        <a href="" class="btn btn-primary btn-block">Payer</a>
+        </div>
+        </div>
+{% endblock %}

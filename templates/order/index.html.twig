@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande - The Store{% endblock %}
+
+{% block content %}
+ <h2 class="text-center">Je passe ma commande</h2><hr>
+ <p>Choisissez vos préférences avant de passer votre commande</p><hr>
+ <div class="row">
+    <div class="col-md-6">
+        
+        {% set formHtml %}
+            {{ form_start(form, {action:path('order_recap')}) }}
+            {{ form_end(form) }}
+        {% endset %}
+
+        {{ formHtml | replace({'[br]' : '<br/>'}) | raw }}
+        
+        </div>
+        <div class="col-md-6">
+        
+        
+        </div>
+        </div>
+{% endblock %}
